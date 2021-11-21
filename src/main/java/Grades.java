@@ -25,8 +25,12 @@ public class Grades {
             return (grades[this.size--]);
     }
 
-    public OptionalDouble getAverage() {
-       return  (Arrays.stream(grades).average()); }
+    public double getAverage() {
+        if (this.size == 0)
+            return 0;
+        else
+            return (Arrays.stream(grades).sum() / (this.size));
+
 
     }
-
+}
