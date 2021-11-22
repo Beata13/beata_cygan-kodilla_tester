@@ -6,6 +6,10 @@ public class RandomNumbers {
     }
 
     public int getCountOfRandomNumber(int max) {
+ int min = 0;
+
+
+
         Random random = new Random();
         int result = 0;
         int sum = 0;
@@ -14,6 +18,9 @@ public class RandomNumbers {
             sum = sum + temp;
             result++;}
         return result;
+
+
+
     }
     }
 
