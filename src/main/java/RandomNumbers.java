@@ -5,23 +5,22 @@ public class RandomNumbers {
     public RandomNumbers() {
     }
 
-    public int getCountOfRandomNumber(int max) {
- int min = 0;
-
+    public int getCountOfRandomNumber() {
 
 
         Random random = new Random();
-        int result = 0;
+        int min = 30;
+        int max = 0;
         int sum = 0;
+
         while (sum < 5001) {
-            int temp = random.nextInt(31);
-            sum = sum + temp;
-            result++;}
-        return result;
+            int a = random.nextInt(31);
+            if (a > max) max = a;
+            if (a < min) min = a;
+            sum = sum + a;}
 
-
-
+            System.out.println("Najwyższa wartość to" + " " + max);
+            System.out.println("Najniższa wartość to" + " " + min);
+        return sum;
     }
     }
-
-
