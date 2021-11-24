@@ -1,9 +1,14 @@
-public class Book<of> {
-    private static String author;
-    private static String title;
-    public static String book = author + title;
+public class Book {
+    private  String author;
+    private  String title;
 
-    public static String BookOf(String author, String title) {
-return author + " " + title;
+    public Book(String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
+
+    public static  Book Of(String author, String title) {
+
+return new Book ( author, title);
     }
 }
