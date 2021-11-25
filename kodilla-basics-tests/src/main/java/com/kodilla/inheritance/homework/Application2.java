@@ -6,12 +6,12 @@ public class Application2 {
   Linux linux = new Linux(1995);
   linux.helloLinux();
   linux.linuxInformation();
-        System.out.println(operatingsystem.getYearOfProduction());
+        System.out.println(linux.getYearOfProduction());
 
   Windows windows = new Windows(2020);
   windows.helloWindows();
   windows.windowsInformation();
-        System.out.println(operatingsystem.getYearOfProduction());
+        System.out.println(windows.getYearOfProduction());
 
 
     }
