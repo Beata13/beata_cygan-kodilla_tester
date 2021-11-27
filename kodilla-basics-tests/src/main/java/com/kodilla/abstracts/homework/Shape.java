@@ -1,30 +1,27 @@
 package com.kodilla.abstracts.homework;
 
 public abstract class Shape {
-    private int a;
 
-    public int getA() {
-        return a;
+    public int getArea() {
+        return area;
     }
 
-    public int getB() {
-        return b;
+    public int getPerimeter() {
+        return perimeter;
     }
 
-    public int getH() {
-        return h;
+    public Shape(int area, int perimeter) {
+
+        this.area = area;
+        this.perimeter = perimeter;
     }
 
-    public Shape(int a, int b, int h) {
-        this.a = a;
-        this.b = b;
-        this.h = h;
-    }
-
-    private int b;
-    private int h;
+int area;
+int perimeter;
 
     public abstract void surfaceArea();
 
+
     public abstract void perimeter();
+
 }
