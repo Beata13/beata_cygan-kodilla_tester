@@ -8,9 +8,9 @@ public class Calculator {
         return a - b;
     }
 
-    public int raising(int a) {
+    public int raising(double a) {
         {
-            return a * a;
+           return (int) (a*a);
         }
     }
         }
