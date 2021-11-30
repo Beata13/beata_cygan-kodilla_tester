@@ -6,8 +6,5 @@ public class Nurse extends Job {
         super(2500, "Checking blood pressure");
     }
 
-    @Override
-    public void jobCharacteristic() {
-        System.out.println(getSalary() + getResponsibilities());
-    }
-}
+     }
+

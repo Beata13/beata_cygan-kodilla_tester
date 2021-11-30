@@ -3,17 +3,17 @@ package com.kodilla.abstracts.homework;
 public class Person {
    public String Firstname;
 
-    public Person(String firstname, int age, Job job) {
+    public Person(String firstname, int age) {
         Firstname = firstname;
         this.age = age;
-        this.job = job;
     }
 
-   public int age;
-   public Job job;
+    public int age;
+public Job job;
+public void jobResponsibilities (Job job){
+    System.out.println(Firstname + age + job.getResponsibilities());
 
-public void personResponsibilities() {
-    System.out.println(Firstname + age  + job );
 }
+
 
 }

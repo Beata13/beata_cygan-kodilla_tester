@@ -1,10 +1,6 @@
 package com.kodilla.abstracts.homework;
 
 public abstract class Job {
-    public Job() {
-
-    }
-
     public int getSalary() {
         return salary;
     }
@@ -13,15 +9,13 @@ public abstract class Job {
         return responsibilities;
     }
 
-    private int salary;
+    int salary;
 
     public Job(int salary, String responsibilities) {
         this.salary = salary;
         this.responsibilities = responsibilities;
     }
 
-    private String responsibilities;
+    String responsibilities;
+    }
 
-
-public abstract void jobCharacteristic();
-}
