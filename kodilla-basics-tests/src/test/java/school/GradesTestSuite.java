@@ -6,14 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GradesTestSuite {
-
     @Test
     public void shouldHaveZeroLength() {
         Grades grades = new Grades();
         int[] values = grades.getValues();
         assertEquals(0, values.length);
     }
-
     @Test
     public void shouldAddTwoElementsToArray() {
         Grades grades = new Grades();
