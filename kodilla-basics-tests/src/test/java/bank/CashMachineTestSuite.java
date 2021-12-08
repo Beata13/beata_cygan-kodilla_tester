@@ -55,6 +55,8 @@ public class CashMachineTestSuite {
         cashMachine.addTransaction(-200);
         assertEquals(200, cashMachine.getAveragePositiveTransactions(), 100);
     }
+
+
 }
 
 

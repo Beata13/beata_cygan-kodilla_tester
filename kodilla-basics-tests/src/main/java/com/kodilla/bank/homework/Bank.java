@@ -55,13 +55,6 @@ public class Bank {
         return result;
     }
 
-    public double CashMachinesNegAverage() {
-        double result = 0;
-        for (CashMachine machines : cashMachines) {
-            result = result + machines.getAverageNegativeTransactions();
-        }
-        return result;
-    }
 
 }
 

@@ -31,7 +31,7 @@ public class CashMachine {
     }
 
     public int sumTransaction() {
-       int result = 0;
+        int result = 0;
         for (int tx : transaction) {
             result = result + tx;
         }
@@ -63,20 +63,14 @@ public class CashMachine {
 
     public double getAveragePositiveTransactions() {
         double sum = 0;
-        for (int i = 0; i <this.size ; i++) {
+        for (int i = 0; i < this.size; i++) {
+            if (i > 0) {
+                sum += this.transaction[i];
 
-             sum = this.transaction[i];
+
+            }
         }
-        return sum / this.transaction.length;
-    }
-
-    public double getAverageNegativeTransactions() {
-        double sum = 0;
-        for (int i = 0; i < 0; i++) {
-            sum += this.transaction[i];
-        }
-        return sum / this.transaction.length;
-
-    }
+        return sum / this.transaction.length;   }
 }
+
 

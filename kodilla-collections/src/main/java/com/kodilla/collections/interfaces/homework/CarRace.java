@@ -15,11 +15,15 @@ doRace(renault);
     }
 
     private static void doRace(Car car) {
-        System.out.println(car.increaseSpeed());
-        System.out.println(car.increaseSpeed() + car.increaseSpeed());
-        System.out.println(car.increaseSpeed() + car.increaseSpeed() + car.increaseSpeed());
-        System.out.println((car.increaseSpeed() + car.increaseSpeed() + car.increaseSpeed()) + car.decreaseSpeed());
-        System.out.println((car.increaseSpeed() + car.increaseSpeed() + car.increaseSpeed()) + car.decreaseSpeed() + car.decreaseSpeed());
-        System.out.println(car.getSpeed());
-    }
-}
+car.increaseSpeed();
+car.increaseSpeed();
+car.increaseSpeed();
+car.decreaseSpeed();
+car.decreaseSpeed();
+car.getSpeed();
+
+
+
+
+
+    } }

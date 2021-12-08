@@ -1,23 +1,25 @@
 package com.kodilla.collections.interfaces.homework;
 
 public class Renault implements Car {
-    int speed;
     public Renault(int speed) {
         this.speed = speed;
     }
 
+    int speed;
+
     @Override
-    public int getSpeed() {
-        return speed;
+    public void getSpeed() {
+        System.out.println(speed);
     }
 
     @Override
-    public int increaseSpeed() {
-        return speed + 20;
+    public void increaseSpeed() {
+        System.out.println(speed + 50);
+
     }
 
     @Override
-    public int decreaseSpeed() {
-        return speed - 20;
+    public void decreaseSpeed() {
+        System.out.println(speed - 50);
     }
 }

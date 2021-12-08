@@ -21,9 +21,9 @@ public class CarApplication {
         int speedIncreaser = random.nextInt() * 100 + 1;
 
         if (drawnCarKind == 0)
-            return new Renault(drawCar().getSpeed() + speedIncreaser);
+            return new Renault(200);
         else if (drawnCarKind ==1)
-            return new Opel(drawCar().getSpeed() + speedIncreaser);
-        else return new Audi(drawCar().getSpeed() + speedIncreaser);
+            return new Opel(100);
+        else return new Audi(180);
     }
 }
