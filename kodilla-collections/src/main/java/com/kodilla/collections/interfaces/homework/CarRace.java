@@ -21,9 +21,5 @@ car.increaseSpeed();
 car.decreaseSpeed();
 car.decreaseSpeed();
 car.getSpeed();
-
-
-
-
-
-    } }
+    }
+}

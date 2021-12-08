@@ -8,19 +8,19 @@ public class Audi implements Car {
     int speed;
 
     @Override
-    public void getSpeed() {
-        System.out.println(speed);
+    public int getSpeed() {
+        return speed;
     }
 
     @Override
     public void increaseSpeed() {
-        System.out.println(speed + 20);
+
 
     }
 
     @Override
     public void decreaseSpeed() {
-        System.out.println(speed - 20);
+
     }
 }
 
