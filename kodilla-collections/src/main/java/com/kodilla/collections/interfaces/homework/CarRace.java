@@ -20,6 +20,6 @@ car.increaseSpeed();
 car.increaseSpeed();
 car.decreaseSpeed();
 car.decreaseSpeed();
-car.getSpeed();
+        System.out.println(car.getSpeed());
     }
 }

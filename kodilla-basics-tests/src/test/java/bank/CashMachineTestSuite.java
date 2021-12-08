@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashMachineTestSuite {
+    CashMachine cashMachine = new CashMachine();
 
     @Test
     public void shouldAddTransactions() {
@@ -53,10 +54,28 @@ public class CashMachineTestSuite {
         cashMachine.addTransaction(300);
         cashMachine.addTransaction(100);
         cashMachine.addTransaction(-200);
-        assertEquals(200, cashMachine.getAveragePositiveTransactions(), 100);
+        assertEquals(200, cashMachine.getAveragePositiveTransactions(), 0.01);
     }
 
+    @Test
+    public void shouldGetNegativePositivesTX() {
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.addTransaction(300);
+        cashMachine.addTransaction(-100);
+        cashMachine.addTransaction(-200);
+        assertEquals(100, cashMachine.getAverageNegativeTransactions(), 100);
 
+    }
+
+    @Test
+    public void shouldCalculateBalance() {
+        Bank bank = new Bank();
+        CashMachine cashMachine1 = new CashMachine();
+        CashMachine cashMachine2 = new CashMachine();
+       cashMachine1.addTransaction(100);
+        cashMachine2.addTransaction(300);
+        assertEquals(400, bank.balance());
+
+    }
 }
-
 

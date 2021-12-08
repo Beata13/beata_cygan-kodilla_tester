@@ -14,12 +14,14 @@ public class Renault implements Car {
 
     @Override
     public void increaseSpeed() {
+        speed = speed + 50;
     }
 
 
 
     @Override
     public void decreaseSpeed() {
-        System.out.println(speed - 50);
+       speed = speed -15;
+
     }
 }

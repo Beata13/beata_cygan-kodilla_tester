@@ -19,7 +19,7 @@ public class CashMachine {
         return size;
     }
 
-    public void addTransaction(int value) {
+    public CashMachine addTransaction(int value) {
         this.size++;
         int[] newTransaction = new int[this.size];
         System.arraycopy(transaction, 0, newTransaction, 0, transaction.length);
@@ -28,6 +28,7 @@ public class CashMachine {
         this.transaction = newTransaction;
 
 
+        return null;
     }
 
     public int sumTransaction() {
@@ -63,14 +64,28 @@ public class CashMachine {
 
     public double getAveragePositiveTransactions() {
         double sum = 0;
+        int count = 0;
+
         for (int i = 0; i < this.size; i++) {
-            if (i > 0) {
+            if (this.transaction[i] > 0) {
+                sum += this.transaction[i];
+                count++;
+            }
+
+        }
+
+        return sum / count;
+    }
+
+    public double getAverageNegativeTransactions() {
+        double sum = 0;
+        for (int i = 0; i < this.size; i++) {
+            if (this.transaction[i] < 0) {
                 sum += this.transaction[i];
 
-
             }
+
         }
-        return sum / this.transaction.length;   }
+        return (sum / this.transaction.length) * -1;
+    }
 }
-
-
