@@ -17,6 +17,8 @@ public class CarApplication {
 
     private static Car drawCar() {
         Random random = new Random();
+
+
         int drawnCarKind = random.nextInt(3);
         int speedIncreaser = random.nextInt() * 100 + 1;
 

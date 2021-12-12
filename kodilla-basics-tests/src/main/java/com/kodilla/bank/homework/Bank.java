@@ -15,7 +15,7 @@ public class Bank {
     public void addNewCashMachine(CashMachine cashMachine) {
         this.size++;
         CashMachine[] newCashMachine = new CashMachine[this.size];
-        System.arraycopy(cashMachines, 0, cashMachines, 0, cashMachines.length);
+        System.arraycopy(cashMachines, 0, newCashMachine, 0, cashMachines.length);
 
         newCashMachine[(this.size - 1)] = cashMachine;
 
@@ -49,13 +49,19 @@ public class Bank {
 
     public double CashMachinesPosAverage() {
         double result = 0;
-        for (CashMachine machines : cashMachines) {
+                for (CashMachine machines : cashMachines) {
             result = result + machines.getAveragePositiveTransactions();
+
         }
         return result;
     }
 
-
+    public double CashMachinesNegAverage() {
+        double result = 0;
+        for (CashMachine machines : cashMachines) {
+            result = result + machines.getAverageNegativeTransactions();
+        }
+        return result;
+    }
 }
-
 

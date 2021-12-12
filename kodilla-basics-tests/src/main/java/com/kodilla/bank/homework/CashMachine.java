@@ -79,13 +79,14 @@ public class CashMachine {
 
     public double getAverageNegativeTransactions() {
         double sum = 0;
+        double count = 0;
         for (int i = 0; i < this.size; i++) {
             if (this.transaction[i] < 0) {
                 sum += this.transaction[i];
-
+count++;
             }
 
         }
-        return (sum / this.transaction.length) * -1;
+        return (sum / count) * -1;
     }
 }
