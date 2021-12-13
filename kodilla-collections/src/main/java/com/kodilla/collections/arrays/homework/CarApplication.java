@@ -26,4 +26,9 @@ public class CarApplication {
             return new Opel(speedIncreaser);
         else return new Audi( speedIncreaser);
     }
+
+    @Override
+    public String toString() {
+        return "CarApplication{}";
+    }
 }

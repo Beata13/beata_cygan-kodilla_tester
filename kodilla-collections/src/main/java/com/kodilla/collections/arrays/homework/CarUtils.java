@@ -7,6 +7,11 @@ import com.kodilla.collections.interfaces.homework.Renault;
 
 public class CarUtils {
 
+    @Override
+    public String toString() {
+        return "CarUtils{}";
+    }
+
     public static void describeCar(Car car) {
         System.out.println("-----------------------------");
         System.out.println("Car kind: " + getCarName(car));
