@@ -9,23 +9,21 @@ import java.util.Random;
 public class CarApplication {
     public static void main(String[] args) {
         Car[] cars = new Car[15];
-        for (int n=0; n< cars.length; n++)
+        for (int n = 0; n < cars.length; n++)
             cars[n] = drawCar();
-        for ( Car car : cars)
+        for (Car car : cars)
             CarUtils.describeCar(car);
     }
 
     private static Car drawCar() {
         Random random = new Random();
-
-
         int drawnCarKind = random.nextInt(3);
         int speedIncreaser = random.nextInt() * 100 + 1;
 
         if (drawnCarKind == 0)
-            return new Renault(200);
+            return new Renault(speedIncreaser);
         else if (drawnCarKind ==1)
-            return new Opel(100);
-        else return new Audi(180);
+            return new Opel(speedIncreaser);
+        else return new Audi( speedIncreaser);
     }
 }
