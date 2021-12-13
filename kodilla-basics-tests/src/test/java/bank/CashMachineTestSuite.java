@@ -121,11 +121,10 @@ public class CashMachineTestSuite {
         CashMachine cashMachine2 = new CashMachine();
         cashMachine1.addTransaction(100);
         cashMachine2.addTransaction(100);
-        cashMachine2.addTransaction(-50);
         bank.addNewCashMachine(cashMachine1);
         bank.addNewCashMachine(cashMachine2);
         double PosAverage = bank.CashMachinesPosAverage();
-        assertEquals(150, PosAverage);
+        assertEquals(100, PosAverage);
 
     }
 
@@ -135,12 +134,11 @@ public class CashMachineTestSuite {
 
         CashMachine cashMachine1 = new CashMachine();
         CashMachine cashMachine2 = new CashMachine();
-        cashMachine1.addTransaction(100);
-        cashMachine2.addTransaction(-50);
-        cashMachine2.addTransaction(-50);
+        cashMachine1.addTransaction(-100);
+        cashMachine2.addTransaction(-100);
         bank.addNewCashMachine(cashMachine1);
         bank.addNewCashMachine(cashMachine2);
-        double NegAverage = bank.CashMachinesNegAverage();
-        assertEquals(50, NegAverage);
+        double PosAverage = bank.CashMachinesPosAverage();
+        assertEquals(-100, PosAverage);
     }
 }

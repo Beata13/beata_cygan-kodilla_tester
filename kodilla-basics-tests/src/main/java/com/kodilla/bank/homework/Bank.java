@@ -49,19 +49,22 @@ public class Bank {
 
     public double CashMachinesPosAverage() {
         double result = 0;
+        double count = 0;
                 for (CashMachine machines : cashMachines) {
             result = result + machines.getAveragePositiveTransactions();
-
+count++;
         }
-        return result;
+        return result/count;
     }
 
     public double CashMachinesNegAverage() {
         double result = 0;
+        double count = 0;
         for (CashMachine machines : cashMachines) {
             result = result + machines.getAverageNegativeTransactions();
+            count++;
         }
-        return result;
+        return result/count;
     }
 }
 
