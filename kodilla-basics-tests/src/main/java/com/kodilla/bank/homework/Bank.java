@@ -51,8 +51,8 @@ public class Bank {
         double result = 0;
         double count = 0;
                 for (CashMachine machines : cashMachines) {
-            result = result + machines.getAveragePositiveTransactions();
-count++;
+            result = result + machines.positiveTX();
+count = count+ machines.countPositiveTransactions();
         }
         return result/count;
     }
@@ -61,8 +61,8 @@ count++;
         double result = 0;
         double count = 0;
         for (CashMachine machines : cashMachines) {
-            result = result + machines.getAverageNegativeTransactions();
-            count++;
+            result = result + machines.negativeTX();
+            count = count + machines.countNegativeTransactions();
         }
         return result/count;
     }

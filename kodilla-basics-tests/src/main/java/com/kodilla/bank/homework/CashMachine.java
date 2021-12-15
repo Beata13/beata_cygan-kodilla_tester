@@ -51,12 +51,34 @@ public class CashMachine {
 
     }
 
+    public int positiveTX() {
+        int result = 0;
+        for (int tx : transaction) {
+            if (tx > 0) {
+                result = result + tx;
+            }
+        }
+        return result;
+
+    }
+
+
     public int countNegativeTransactions() {
         int result = 0;
         for (int tx : transaction) {
 
             if (tx < 0) {
                 result++;
+            }
+        }
+        return result;
+    }
+
+    public int negativeTX() {
+        int result = 0;
+        for (int tx : transaction) {
+            if (tx < 0) {
+                result = result + tx;
             }
         }
         return result;
@@ -83,8 +105,9 @@ public class CashMachine {
         for (int i = 0; i < this.size; i++) {
             if (this.transaction[i] < 0) {
                 sum += this.transaction[i];
-count++;
+                count++;
             }
+
 
         }
         return (sum / count);
