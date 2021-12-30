@@ -17,10 +17,10 @@ public class Application {
        for (Student student :students){
            System.out.println(student.getName());
            System.out.println(student.getTeacher());
-           Optional<Student> optionalStudent = Optional.ofNullable(student);
+           Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
 
-         Student  student1 = optionalStudent.orElse(new Student("",new Teacher("<undefined>")));
-           System.out.println(student1);
+         Teacher teacher1   = optionalTeacher.orElse(new Teacher("<undefined>"));
+           System.out.println(teacher1.getName());
 
 }
     }
