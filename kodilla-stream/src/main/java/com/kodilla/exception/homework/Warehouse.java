@@ -4,19 +4,17 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Warehouse {
-    static List<String> orders = new LinkedList<>();
+    private List<Order> orders = new LinkedList<>();
 
-    public  void addOrder(String orders) {
-
+    public  void addOrder(Order order) {
+orders.add(order);
     }
 
-    public static void  getOrder(String number) throws OrderDoesntExistException {
-        orders.stream();
-        Stream<String> stringStream = orders.stream().filter(u -> orders.size(1));
-        orders.stream().map(n -> orders.add("Pizza"));
-       orders.forEach(System.out::println);
-    if (orders.isEmpty())
-    throw new OrderDoesntExistException();
+    public Order getOrder(String number) throws OrderDoesntExistException {
+return orders.stream()
+        .filter(o -> o.getNumber().equals(number))
+        .findFirst().orElseThrow(()-> new OrderDoesntExistException());
+
     }
     }
 

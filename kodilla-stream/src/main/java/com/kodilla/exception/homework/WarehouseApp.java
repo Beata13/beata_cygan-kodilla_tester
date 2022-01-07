@@ -3,10 +3,15 @@ package com.kodilla.exception.homework;
 public class WarehouseApp {
     public static void main(String[] args) {
         Warehouse warehouse = new Warehouse();
-        warehouse.addOrder("Pizza");
-        warehouse.addOrder("Pancakes");
-        warehouse.addOrder("Fish and chips");
+        warehouse.addOrder(new Order("1"));
+        warehouse.addOrder(new Order("2"));
+        warehouse.addOrder(new Order("3"));
 
+        try {
+            warehouse.getOrder("2");
+            System.out.println("Zamówienie istnieje");
+        } catch (OrderDoesntExistException e) {
+            System.out.println("Zamówienie nie istnieje");
+        }
     }
-
 }
