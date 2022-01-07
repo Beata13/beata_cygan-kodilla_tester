@@ -11,4 +11,11 @@ public class FlightRepository {
         this.flightsTable.add(new Flight("Sztokholm", "Warszawa"));
         this.flightsTable.add(new Flight("Berlin", "Moskwa"));
     }
+    public int size(){
+        return flightsTable.size();
+
     }
+
+
+
+}
