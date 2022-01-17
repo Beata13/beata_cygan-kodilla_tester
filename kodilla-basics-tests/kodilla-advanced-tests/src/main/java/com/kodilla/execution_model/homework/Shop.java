@@ -13,34 +13,37 @@ public class Shop {
         this.orders.add(order);
     }
 
-    public List<Order> getOrder(LocalDate date) {
-LocalDate dateIsBefore = LocalDate.of(2021,01,31);
-LocalDate dateIsAfter = LocalDate.of(2021,01,01);
-        if (date.isAfter(dateIsAfter) && date.isBefore(dateIsBefore)) {
+    public List<Order> getOrder(LocalDate dateIsBefore, LocalDate dateIsAfter) {
+        dateIsBefore = LocalDate.of(2021, 01, 31);
+        dateIsAfter = LocalDate.of(2021, 01, 01);
+        if (order.getDate().isAfter(dateIsAfter) && order.getDate().isBefore(dateIsBefore)) {
             return orders;
         }
         return null;
     }
+
     public Order getOrders(int index) {
         if (index >= 0 && index < orders.size()) {
             return this.orders.get(index);
         }
         return null;
     }
-    public int getOrdersSize (){
+
+    public int getOrdersSize() {
         return orders.size();
     }
-    public boolean getOrdersValue(){
+
+    public boolean getOrdersValue() {
         return orders.add(order);
     }
-    
-    public String addOrderIfValueIsCorrect(){
+
+    public String addOrderIfValueIsCorrect() {
         int value = 0;
-        if (value >=10 && value < 1000){
+        if (value >= 10 && value < 1000) {
             addOrder(new Order());
         }
         return "Value is not correct";
     }
 
-    }
+}
 
