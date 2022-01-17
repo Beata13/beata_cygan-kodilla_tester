@@ -10,10 +10,6 @@ public class Person {
         this.weightInKilogram = weightInKilogram;
     }
 
-    public Person() {
-
-    }
-
     public String getBMI() {
         double bmi = weightInKilogram / (heightInMeters * heightInMeters);
         if (bmi < 15) {
