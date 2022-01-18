@@ -15,7 +15,7 @@ public class Shop {
 
     public List<Order> getOrder (LocalDate dateIsBefore, LocalDate dateIsAfter) {
                if (order.getDate().isAfter(dateIsAfter) && order.getDate().isBefore(dateIsBefore)) {
-            return orders;
+            return getOrder(dateIsBefore, dateIsAfter);
         }
         return null;
     }
