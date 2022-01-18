@@ -73,9 +73,11 @@ public class ShopTestSuite {
     }
 
     @Test
-    public void shouldNotReturnOrderIfDateISNotCorrect() {
+  public void shouldNotReturnOrderIfDateISNotCorrect() {
         shop.addOrder(order2);
-        assertEquals(null, shop.getOrder(LocalDate.of(2021,01,31), LocalDate.of(2021,01,01)));
-    }
+        LocalDate firstDate = LocalDate.of(2021,01,01);
+        LocalDate secondDate = LocalDate.of(2021,01,31);
+        assertEquals(null, shop.getOrder(secondDate, firstDate));
+  }
 
 }

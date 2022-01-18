@@ -13,10 +13,8 @@ public class Shop {
         this.orders.add(order);
     }
 
-    public List<Order> getOrder(LocalDate dateIsBefore, LocalDate dateIsAfter) {
-        dateIsBefore = LocalDate.of(2021, 01, 31);
-        dateIsAfter = LocalDate.of(2021, 01, 01);
-        if (order.getDate().isAfter(dateIsAfter) && order.getDate().isBefore(dateIsBefore)) {
+    public List<Order> getOrder (LocalDate dateIsBefore, LocalDate dateIsAfter) {
+               if (order.getDate().isAfter(dateIsAfter) && order.getDate().isBefore(dateIsBefore)) {
             return orders;
         }
         return null;

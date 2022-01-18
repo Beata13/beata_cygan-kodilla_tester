@@ -13,7 +13,7 @@ public class PersonTestSuite {
     @MethodSource(value = "PersonSources#providePersonData")
 
     public void shouldCalculateBMICorrectly(double input, double expected) {
-        Person person = new Person();
+        Person person = new Person(double heightInMeters, double weightInKilogram)
         assertEquals("Obese Class VI (Hyper Obese)", person.getBMI());
 
     }
@@ -22,7 +22,7 @@ public class PersonTestSuite {
     @MethodSource(value = "PersonSoures2#providePersonData2")
 
     public void shouldCalculateBMICorrectly2(double input, double expected) {
-        Person person = new Person();
+        Person person = new Person(double heightInMeters, double weightInKilogram);
         assertEquals("Obese Class VI (Hyper Obese)", person.getBMI());
     }
 
