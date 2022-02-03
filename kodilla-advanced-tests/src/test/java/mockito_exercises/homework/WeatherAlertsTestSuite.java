@@ -26,7 +26,7 @@ public class WeatherAlertsTestSuite {
         Assertions.assertEquals(1, weatherAlert.getUsersNumber("London"));
     }
     @Test
-    public void shouldAddUserTwoUsersToTheSameLocalisation() {
+    public void shouldAddTwoUsersToTheSameLocalisation() {
         WeatherAlert weatherAlert = new WeatherAlert();
         User user = Mockito.mock(User.class);
         User user1 = Mockito.mock(User.class);
