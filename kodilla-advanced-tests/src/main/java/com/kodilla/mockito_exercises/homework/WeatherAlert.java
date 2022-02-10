@@ -27,6 +27,22 @@ public class WeatherAlert {
         return users.get(localisation).size();
 
     }
+public void sendAlert (Alert alert, String localisation){
+    if (users.containsKey(localisation)) {
+        users.get(localisation).forEach(user -> user.receive(alert));
+    }
 
+}
+public void unsubscribeAlert(User user, String localisation){
+    if (users.containsKey(localisation)) {
+        users.get(localisation).remove(user);
+    }
 
+}
+    public void unsubscribeUserFromAllLocalisations(User user){
+        for (Map.Entry<String, List<User>> entry: users.entrySet()){
+        {
+
+        }
+        }
 }
