@@ -10,6 +10,7 @@ import java.time.LocalTime;
 public class Clock {
 
     public LocalTime Clock() {
-        return LocalTime.now();
+         LocalTime time = LocalTime.now();
+        return time;
     }
 }
