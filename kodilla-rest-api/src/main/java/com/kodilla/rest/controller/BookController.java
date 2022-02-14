@@ -1,6 +1,6 @@
 package com.kodilla.rest.controller;
 
-import com.kodilla.rest.controller.BookDto;
+import com.kodilla.rest.domain.BookDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

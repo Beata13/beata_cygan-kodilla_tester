@@ -1,4 +1,4 @@
-package com.kodilla.rest.controller;
+package com.kodilla.rest.domain;
 
 public class BookDto {
     private String title;

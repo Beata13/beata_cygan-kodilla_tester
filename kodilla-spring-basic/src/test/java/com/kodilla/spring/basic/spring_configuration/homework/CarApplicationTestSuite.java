@@ -10,26 +10,26 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
-class CarApplicationTestSuite {
-    @Test
-    public void shouldChooseCorrectCar() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
-Car car = (Car) context.getBean("whichCarIsInUse");
-        String carType = car.getCarType();
-        System.out.println(carType);
-List<String> possibleCarType = Arrays.asList("SUV", "Cabrio", "Sedan" );
-        Assertions.assertTrue(possibleCarType.contains(carType));
+        class CarApplicationTestSuite {
+            @Test
+            public void shouldChooseCorrectCar() {
+                ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+                Car car = (Car) context.getBean("whichCarIsInUse");
+                String carType = car.getCarType();
+                System.out.println(carType);
+                List<String> possibleCarType = Arrays.asList("SUV", "Cabrio", "Sedan" );
+                Assertions.assertTrue(possibleCarType.contains(carType));
 
 
-   }
-    @Test
-    public void shouldTurnOffLights() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+            }
+            @Test
+            public void shouldTurnOffLights() {
+                ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
         Car car = (Car) context.getBean("LightsTurnOnAndOff");
-        boolean lightsStatus = car.hasHeadlightsTurnedOn();
+        String lightsStatus = String.valueOf(car.hasHeadlightsTurnedOn());
         System.out.println(lightsStatus);
 
-        Assertions.assertEquals("Lights off", lightsStatus);
+        Assertions.assertEquals("Lights on", lightsStatus);
 
     }
     }
