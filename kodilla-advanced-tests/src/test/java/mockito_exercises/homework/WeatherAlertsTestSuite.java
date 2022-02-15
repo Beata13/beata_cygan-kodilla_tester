@@ -36,7 +36,7 @@ public class WeatherAlertsTestSuite {
         User user = Mockito.mock(User.class);
         User user1 = Mockito.mock(User.class);
         weatherAlert.addUser(user1, "Warsaw");
-        Assertions.assertEquals(2, weatherAlert.getUsersNumber("Warsaw"));
+        Assertions.assertEquals(1, weatherAlert.getUsersNumber("Warsaw"));
 
     }
 

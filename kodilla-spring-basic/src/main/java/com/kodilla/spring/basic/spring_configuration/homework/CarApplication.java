@@ -25,16 +25,15 @@ public class CarApplication {
     }
 
     @Bean
-    public void LightsTurnOnAndOff() {
+    public boolean LightsTurnOnAndOff() {
         Car car;
         LocalTime time = LocalTime.now();
         LocalTime startTime = LocalTime.parse("06:00:00");
         LocalTime stopTime = LocalTime.parse("20:00:00");
         if (time.isAfter(startTime) && time.isBefore(stopTime)) ;
         {
-            System.out.println("Lights off");
+            return false;
         }
-        if (time.isAfter(stopTime) && time.isBefore(startTime)) ;
-        System.out.println("Lights on");
     }
 }
+

@@ -26,10 +26,8 @@ import java.util.List;
             public void shouldTurnOffLights() {
                 ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
         Car car = (Car) context.getBean("LightsTurnOnAndOff");
-        String lightsStatus = String.valueOf(car.hasHeadlightsTurnedOn());
-        System.out.println(lightsStatus);
-
-        Assertions.assertEquals("Lights on", lightsStatus);
+        boolean lightsStatus = car.hasHeadlightsTurnedOn();
+        Assertions.assertFalse(lightsStatus);
 
     }
     }

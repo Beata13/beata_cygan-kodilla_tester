@@ -8,9 +8,9 @@ import java.time.LocalTime;
 @Component
 @Scope("prototype")
 public class Clock {
-
+    LocalTime time = LocalTime.now();
     public LocalTime Clock() {
-         LocalTime time = LocalTime.now();
+
         return time;
     }
 }
