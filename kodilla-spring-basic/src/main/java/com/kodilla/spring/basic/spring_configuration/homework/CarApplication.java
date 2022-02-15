@@ -9,15 +9,16 @@ import java.util.Random;
 @Configuration
 public class CarApplication {
     @Bean
-    public Car whichCarIsInUse() {
+    public Car getCarType() {
         Car car;
         Random generator = new Random();
         int season = generator.nextInt(5);
         if (season == 1) {
             car = new SUV();
+            return car;
         } else if (season == 2) {
             car = new Cabrio();
-
+            return car;
         } else {
             car = new Sedan();
         }
