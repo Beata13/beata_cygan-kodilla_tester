@@ -3,6 +3,7 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Random;
 
@@ -11,30 +12,21 @@ public class CarApplication {
     @Bean
     public Car getCarType() {
         Car car;
-        Random generator = new Random();
-        int season = generator.nextInt(5);
-        if (season == 1) {
+        LocalDate month = LocalDate.now();
+        int monthNumber = month.getMonthValue();
+
+        if (monthNumber == 1 || monthNumber == 2 || monthNumber == 12) {
             car = new SUV();
-            return car;
-        } else if (season == 2) {
+
+        } else if (monthNumber == 6 || monthNumber == 7 || monthNumber == 8) {
             car = new Cabrio();
-            return car;
+
         } else {
             car = new Sedan();
         }
         return car;
     }
 
-    @Bean
-    public boolean LightsTurnOnAndOff() {
-        Car car;
-        LocalTime time = LocalTime.now();
-        LocalTime startTime = LocalTime.parse("06:00:00");
-        LocalTime stopTime = LocalTime.parse("20:00:00");
-        if (time.isAfter(startTime) && time.isBefore(stopTime)) ;
-        {
-            return false;
-        }
-    }
+
 }
 

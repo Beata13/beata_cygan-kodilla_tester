@@ -10,23 +10,24 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
-        class CarApplicationTestSuite {}
-//            @Test
-//            public void shouldChooseCorrectCar() {
-//                ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
-//                Car car = (Car) context.getBean("getCarType");
-//                String carType = car.getCarType();
-//                           List<String> possibleCarType = Arrays.asList("SUV", "Cabrio", "Sedan" );
-//                Assertions.assertTrue(possibleCarType.contains(carType));
-//
-//
-//            }
-//            @Test
-//            public void shouldTurnOffLights() {
-//                ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
-//        Car car = (Car) context.getBean("LightsTurnOnAndOff");
-//        boolean lightsStatus = car.hasHeadlightsTurnedOn();
-//        Assertions.assertFalse(lightsStatus);
-//
-//    }
-//    }
+        class CarApplicationTestSuite {
+            @Test
+            public void shouldChooseCorrectCar() {
+                ApplicationContext context = new AnnotationConfigApplicationContext(CarApplication.class);
+                Car car = (Car) context.getBean("getCarType");
+                String carType = car.getCarType();
+                    System.out.println(carType);
+                           List<String> possibleCarType = Arrays.asList("SUV", "Cabrio", "Sedan" );
+                Assertions.assertTrue(possibleCarType.contains(carType));
+
+
+            }
+            @Test
+            public void shouldTurnOffLights() {
+                ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car car = (Car) context.getBean("getCarType");
+        boolean lightsStatus = car.hasHeadlightsTurnedOn();
+        Assertions.assertFalse(lightsStatus);
+
+    }
+    }

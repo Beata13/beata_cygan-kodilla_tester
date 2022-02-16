@@ -89,4 +89,16 @@ public class WeatherAlertsTestSuite {
         weatherAlert.sendAlert(alert,"London");
         Mockito.verify(user, times(1)).receive(alert);
     }
+    @Test
+    public void shouldRemoveUserFromAllLocalisations(){
+        WeatherAlert weatherAlert = new WeatherAlert();
+        User user = Mockito.mock(User.class);
+        Alert alert = Mockito.mock(Alert.class);
+        weatherAlert.addUser(user, "London");
+        weatherAlert.addUser(user, "Warsaw");
+        weatherAlert.unsubscribeUserFromAllLocalisations(user);
+        weatherAlert.sendAlert(alert,"Warsaw");
+        weatherAlert.sendAlert(alert,"London");
+        Mockito.verify(user, never()).receive(alert);
+    }
 }

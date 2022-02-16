@@ -44,7 +44,7 @@ public class WeatherAlert {
 
     public void unsubscribeUserFromAllLocalisations(User user) {
         for (Map.Entry<String, List<User>> entry : users.entrySet()) {
-            {
+            {entry.getValue().remove(user);
 
             }
         }
