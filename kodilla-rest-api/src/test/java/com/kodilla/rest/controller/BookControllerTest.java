@@ -34,17 +34,16 @@ class BookControllerTest {
     @Test
     void shouldAddNewBooks() {
         //given
-        BookService bookServiceMock = Mockito.mock(BookService.class);
-              BookController bookController = new BookController(bookServiceMock);
-              BookDto book1 = bookController.addBook(new BookDto("Title 1", "Author 1"));
-        BookDto book2 = bookController.addBook(new BookDto("Title 1", "Author 1"));
-        List<BookDto> booksList = new ArrayList<>();
-        booksList.add(book1);
-        booksList.add(book2);
+        BookService bookService = new BookService();
+              BookController bookController = new BookController(bookService);
+              bookController.addBook(new BookDto("Title 1", "Author 1"));
+        bookController.addBook(new BookDto("Title 2", "Author 2"));
+        List<BookDto> result = bookService.getBooks();
+
         //when
-        int result = booksList.size();
+        int size = result.size();
         //then
-        assertEquals(2,result);
+        assertEquals(2,size);
 
     }
 }
