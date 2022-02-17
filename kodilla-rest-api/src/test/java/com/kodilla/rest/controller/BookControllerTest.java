@@ -13,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BookControllerTest {
 
+    private Object BookDto;
+
     @Test
     void shouldFetchBooks() {
         //given
@@ -31,23 +33,16 @@ class BookControllerTest {
     }
     @Test
     void shouldAddNewBooks() {
-        //given
+//given
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
         List<BookDto> booksList = new ArrayList<>();
-        booksList.add(new BookDto("Harry Potter", "J. K. Rowling"));
-        booksList.add(new BookDto("Lord of the rings", "J.R.R. Tolkien"));
-        booksList.add(new BookDto("The Little Prince", "A. de Saint-Exupery"));
-        Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
-
         //when
-        List<BookDto> result = bookController.getBooks();
-
+        booksList.add(new BookDto("Title 1", "Author 1"));
+        booksList.add(new BookDto("Title 2", "Author 2"));
+        Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
+        int result =booksList.size();
         //then
-        assertThat(result).hasSize(3);
-
-        //then
-        assertThat(result).hasSize(3);
+        assertEquals(2, result);
     }
-
 }
