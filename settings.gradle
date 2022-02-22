@@ -11,4 +11,5 @@ include 'Mojećwiczenia'
 include 'kodilla-rest-api'
 include 'kodilla-rest-api'
 include 'kodilla-rest-api'
+include 'kodilla-selenium'
 
