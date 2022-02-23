@@ -11,13 +11,16 @@ public class AllegroTestingApp {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium-drivers\\Chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://allegro.pl/");
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
+        driver.get("https://www.ebay.pl/");
 
-        WebElement productCategory = driver.findElement(By.xpath("//*[@data-prototype-id=\"allegro.metrumHeader.search\"]/div/div/div/select[3]"));
-        Select yearSelect = new Select(productCategory);
-        WebElement mavicMini = driver.findElement(By.xpath("//*[@data-prototype-id=\"allegro.metrumHeader.search\"]/div/inut"));
-        mavicMini.sendKeys("Mavic mini");
+        WebElement inputField = driver.findElement(By.xpath("//*[@id=\"gh-ac-box2\"]/input"));
+        inputField.sendKeys("Mavic mini");
+        inputField.submit();
+
+        WebElement productCategory = driver.findElement(By.xpath("//*[id=\"gh-cat-box\"]/select"));
+        Select dronCategory = new Select(productCategory);
+        dronCategory.selectByIndex(1);
+
+
     }
 }
